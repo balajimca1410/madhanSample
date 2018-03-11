@@ -1,0 +1,46 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.balaji'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'org.elasticsearch', name: 'elasticsearch', version: '5.6.0'
+compile group: 'org.elasticsearch.client', name: 'transport', version: '5.6.0'
+// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+compile group: 'org.apache.logging.log4j', name: 'log4j-web', version: '2.7'
+// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7'
+// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
+
+
+
+
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
